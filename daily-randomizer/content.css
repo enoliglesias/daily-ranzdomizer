@@ -1,0 +1,189 @@
+#daily-randomizer-widget {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 300px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  z-index: 2147483647;
+  color: #202124;
+  overflow: hidden;
+}
+
+#daily-randomizer-widget * {
+  box-sizing: border-box;
+}
+
+#daily-randomizer-widget .dr-header {
+  background: #1a73e8;
+  color: white;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  user-select: none;
+}
+
+#daily-randomizer-widget .dr-title {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#daily-randomizer-widget .dr-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 6px;
+  line-height: 1;
+  font-family: inherit;
+}
+
+#daily-randomizer-widget.dr-collapsed .dr-body {
+  display: none;
+}
+
+#daily-randomizer-widget .dr-body {
+  padding: 12px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#daily-randomizer-widget .dr-controls,
+#daily-randomizer-widget .dr-status {
+  flex-shrink: 0;
+}
+
+#daily-randomizer-widget .dr-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#daily-randomizer-widget button.dr-randomize,
+#daily-randomizer-widget button.dr-start,
+#daily-randomizer-widget button.dr-reset {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  width: 100%;
+  font-family: inherit;
+  transition: background 0.15s ease;
+}
+
+#daily-randomizer-widget .dr-randomize {
+  background: #1a73e8;
+  color: white;
+}
+#daily-randomizer-widget .dr-randomize:hover {
+  background: #1557b0;
+}
+
+#daily-randomizer-widget .dr-start {
+  background: #1e8e3e;
+  color: white;
+}
+#daily-randomizer-widget .dr-start:hover {
+  background: #176f30;
+}
+
+#daily-randomizer-widget .dr-reset {
+  background: #f1f3f4;
+  color: #202124;
+}
+#daily-randomizer-widget .dr-reset:hover {
+  background: #e2e6ea;
+}
+
+#daily-randomizer-widget .dr-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#daily-randomizer-widget .dr-nav button {
+  flex: 1;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background 0.15s ease;
+}
+
+#daily-randomizer-widget .dr-nav button:hover:not(:disabled) {
+  background: #1557b0;
+}
+
+#daily-randomizer-widget .dr-nav button:disabled {
+  background: #c4d3ec;
+  cursor: not-allowed;
+}
+
+#daily-randomizer-widget .dr-progress {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a73e8;
+  min-width: 56px;
+  text-align: center;
+}
+
+#daily-randomizer-widget .dr-status {
+  margin: 10px 0 6px 0;
+  font-size: 12px;
+  color: #5f6368;
+  min-height: 16px;
+}
+
+#daily-randomizer-widget .dr-status.dr-error {
+  color: #d93025;
+}
+
+#daily-randomizer-widget .dr-result {
+  margin: 0;
+  padding-left: 22px;
+  list-style: decimal;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+#daily-randomizer-widget .dr-result li {
+  padding: 6px 4px;
+  font-size: 13px;
+  border-bottom: 1px solid #dadce0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#daily-randomizer-widget .dr-result li:last-child {
+  border-bottom: none;
+}
+
+#daily-randomizer-widget .dr-result li.dr-done {
+  color: #9aa0a6;
+  text-decoration: line-through;
+}
+
+#daily-randomizer-widget .dr-result li.dr-active {
+  background: #e8f0fe;
+  color: #1a73e8;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 8px 6px;
+  margin: 2px -4px;
+}
