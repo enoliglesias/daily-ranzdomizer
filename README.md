@@ -1,4 +1,4 @@
-# daily-ranzdomizer
+# daily-randomizer
 Google Chrome extension to randomize google meet participants  
 
 # How to install
